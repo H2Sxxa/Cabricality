@@ -1,6 +1,6 @@
 name: Mod Propose
 description: Propose a mod
-title: "[MOD]: "
+title: "[MOD] "
 labels: ["mod propose"]
 body:
   - type: markdown
