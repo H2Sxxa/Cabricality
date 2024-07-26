@@ -21,12 +21,12 @@ jobs:
               with:
                   java-version: ${{ matrix.java }}
                   distribution: zulu
+            - name: Build with Gradle
+              uses: gradle/actions/setup-gradle@v3
             - name: Grant execute permission for gradlew
               run: chmod +x gradlew
             - name: Build with Gradle
-              uses: gradle/actions/setup-gradle@v3
-              with:
-                arguments: build
+              run: ./gradlew build
             - name: capture build artifacts
               uses: actions/upload-artifact@v4
               with:
