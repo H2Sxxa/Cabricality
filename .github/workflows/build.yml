@@ -1,8 +1,5 @@
 name: build
-on: 
-  pull_request:
-  push:
-  workflow_dispatch:
+on: [pull_request, push, workflow_dispatch]
 
 jobs:
     build:
@@ -12,7 +9,7 @@ jobs:
                 java: 
                    - 19 # Current Java LTS & minimum supported by Minecraft
                 # and run on both Linux and Windows
-                os: [macos-latest]
+                os: [macos-latest, ubuntu-latest]
         runs-on: ${{ matrix.os }}
         steps:
             - name: checkout repository
